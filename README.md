@@ -152,7 +152,7 @@ src/
 
 ## 👨‍💻 Author
 
-Your Name — [GitHub](https://github.com/YOUR_USERNAME)
+Swati Kumari — [GitHub](https://github.com/SwatiKumari-Developer)
 
 ---
 
