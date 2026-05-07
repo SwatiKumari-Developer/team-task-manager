@@ -1,0 +1,92 @@
+.team-page { max-width: 1200px; }
+
+.page-header { margin-bottom: 1.75rem; }
+.page-header h1 { font-size: 24px; font-weight: 700; color: #1a1a2e; }
+.page-sub { font-size: 14px; color: #6b7280; margin-top: 4px; }
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.team-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.tc-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+
+.tc-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tc-info { flex: 1; min-width: 0; }
+.tc-name { font-size: 15px; font-weight: 700; color: #1a1a2e; }
+.tc-email { font-size: 12px; color: #9ca3af; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.role-pill {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 20px;
+  text-transform: capitalize;
+  flex-shrink: 0;
+}
+.role-pill.admin { background: #fef3c7; color: #92400e; }
+.role-pill.member { background: #e1f5ee; color: #0f6e56; }
+
+.tc-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 1rem;
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.tcs-item { text-align: center; }
+.tcs-value { font-size: 20px; font-weight: 700; color: #1a1a2e; }
+.tcs-label { font-size: 11px; color: #9ca3af; margin-top: 2px; }
+
+.tc-progress { margin-bottom: 10px; }
+.tcp-label { display: flex; justify-content: space-between; font-size: 12px; color: #6b7280; margin-bottom: 6px; font-weight: 500; }
+
+.progress-bar { height: 6px; background: #e5e7eb; border-radius: 3px; overflow: hidden; }
+.progress-fill { height: 100%; border-radius: 3px; transition: width 0.4s; }
+
+.tc-joined { font-size: 12px; color: #c4c9d4; }
+
+/* Summary */
+.summary-section { background: #fff; border-radius: 14px; padding: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.summary-section h2 { font-size: 17px; font-weight: 700; color: #1a1a2e; margin-bottom: 1.25rem; }
+.summary-table-wrap { overflow-x: auto; }
+
+.summary-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.summary-table th { text-align: left; font-size: 12px; font-weight: 600; color: #6b7280; padding: 10px 14px; border-bottom: 1px solid #e5e7eb; background: #f9fafb; white-space: nowrap; }
+.summary-table td { padding: 12px 14px; border-bottom: 1px solid #f3f4f6; color: #374151; }
+.summary-table tr:last-child td { border-bottom: none; }
+
+.mini-av { width: 28px; height: 28px; border-radius: 50%; color: #fff; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+@media (max-width: 600px) {
+  .team-grid { grid-template-columns: 1fr; }
+}
