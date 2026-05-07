@@ -8,7 +8,7 @@ A full-stack-style web app where users can create projects, assign tasks, and tr
 
 ## 🚀 Live Demo
 
-> [Add your live URL here after deployment]
+> https://team-task-manager-71qz.vercel.app
 
 ---
 
