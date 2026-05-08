@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MintLane NFT Marketplace</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="topbar">
+    <a class="brand" href="/" aria-label="MintLane home">
+        <span class="brand-mark">M</span>
+        <span>MintLane</span>
+    </a>
+    <nav class="nav-actions">
+        <button class="ghost-button" id="transactionsButton" type="button">Transactions</button>
+        <button class="primary-button" id="authButton" type="button">Sign in</button>
+        <button class="ghost-button hidden" id="logoutButton" type="button">Logout</button>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="hero-copy">
+            <p class="eyebrow">Responsive NFT Marketplace</p>
+            <h1>Discover, bid, and trade digital collectibles.</h1>
+            <p class="hero-text">A full-stack marketplace using Spring Boot REST APIs, JPA persistence, token authentication, and a responsive JavaScript frontend.</p>
+            <div class="hero-actions">
+                <button class="primary-button" id="listHeroButton" type="button">List an NFT</button>
+                <button class="secondary-button" id="exploreButton" type="button">Explore drops</button>
+            </div>
+        </div>
+        <div class="hero-panel" aria-label="Featured NFT">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=900&q=80" alt="Abstract NFT artwork">
+            <div>
+                <span>Featured drop</span>
+                <strong>Solar Bloom</strong>
+            </div>
+        </div>
+    </section>
+
+    <section class="market-section" id="market">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">Marketplace</p>
+                <h2>Live listings</h2>
+            </div>
+            <button class="primary-button" id="listButton" type="button">Create listing</button>
+        </div>
+
+        <div class="filters">
+            <label>
+                <span>Search</span>
+                <input id="searchInput" type="search" placeholder="Search title or description">
+            </label>
+            <label>
+                <span>Category</span>
+                <select id="categorySelect">
+                    <option>All</option>
+                    <option>Art</option>
+                    <option>Collectible</option>
+                    <option>Photography</option>
+                    <option>Music</option>
+                    <option>Game</option>
+                </select>
+            </label>
+            <label>
+                <span>Status</span>
+                <select id="statusSelect">
+                    <option value="">All</option>
+                    <option value="LISTED">Listed</option>
+                    <option value="SOLD">Sold</option>
+                </select>
+            </label>
+        </div>
+
+        <div class="nft-grid" id="nftGrid"></div>
+        <p class="empty-state hidden" id="emptyState">No NFTs match your filters yet.</p>
+    </section>
+</main>
+
+<dialog class="modal" id="authModal">
+    <form class="modal-card" id="authForm">
+        <button class="icon-button close-modal" data-close="authModal" type="button" aria-label="Close">x</button>
+        <h2 id="authTitle">Sign in</h2>
+        <p class="muted">Use seeded demo login: arya@example.com / password123</p>
+        <label id="usernameField" class="hidden">
+            <span>Username</span>
+            <input id="usernameInput" autocomplete="username">
+        </label>
+        <label>
+            <span>Email</span>
+            <input id="emailInput" type="email" autocomplete="email" required>
+        </label>
+        <label>
+            <span>Password</span>
+            <input id="passwordInput" type="password" autocomplete="current-password" required minlength="6">
+        </label>
+        <button class="primary-button full-button" type="submit">Continue</button>
+        <button class="link-button" id="toggleAuthMode" type="button">Need an account? Register</button>
+    </form>
+</dialog>
+
+<dialog class="modal" id="listingModal">
+    <form class="modal-card" id="listingForm">
+        <button class="icon-button close-modal" data-close="listingModal" type="button" aria-label="Close">x</button>
+        <h2>Create NFT listing</h2>
+        <label>
+            <span>Title</span>
+            <input id="titleInput" required maxlength="120">
+        </label>
+        <label>
+            <span>Category</span>
+            <select id="newCategoryInput" required>
+                <option>Art</option>
+                <option>Collectible</option>
+                <option>Photography</option>
+                <option>Music</option>
+                <option>Game</option>
+            </select>
+        </label>
+        <label>
+            <span>Image URL</span>
+            <input id="imageInput" type="url" required placeholder="https://...">
+        </label>
+        <label>
+            <span>Starting price</span>
+            <input id="priceInput" type="number" min="0.01" step="0.01" required>
+        </label>
+        <label>
+            <span>Description</span>
+            <textarea id="descriptionInput" rows="4" required maxlength="600"></textarea>
+        </label>
+        <button class="primary-button full-button" type="submit">Publish listing</button>
+    </form>
+</dialog>
+
+<dialog class="modal" id="detailModal">
+    <article class="modal-card detail-card">
+        <button class="icon-button close-modal" data-close="detailModal" type="button" aria-label="Close">x</button>
+        <div id="detailContent"></div>
+    </article>
+</dialog>
+
+<dialog class="modal" id="transactionsModal">
+    <article class="modal-card">
+        <button class="icon-button close-modal" data-close="transactionsModal" type="button" aria-label="Close">x</button>
+        <h2>Transaction history</h2>
+        <div class="history-list" id="transactionList"></div>
+    </article>
+</dialog>
+
+<div class="toast hidden" id="toast"></div>
+<script src="/app.js"></script>
+</body>
+</html>
